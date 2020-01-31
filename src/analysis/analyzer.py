@@ -8,7 +8,7 @@ from src.exception.exception import BaseError
 class BaseAnalyzer:
     global dataframe
 
-    def init_files(self, dump_path='resources/netaporter_gb.json'):
+    def init_files(self, dump_path='src/resources/netaporter_gb.json'):
         url = 'https://drive.google.com/a/greendeck.co/uc?id=19r_vn0vuvHpE-rJpFHvXHlMvxa8UOeom&export=download'
         if dump_path.split('/')[0] not in os.listdir():
             os.mkdir(dump_path.split('/')[0])
@@ -19,7 +19,7 @@ class BaseAnalyzer:
 
     def prepare_data(self):
         global dataframe
-        obj = prepare_dataset('resources/netaporter_gb.json')
+        obj = prepare_dataset('src/resources/netaporter_gb.json')
         df = obj.preprocess()
         dataframe = df
 
